@@ -6,12 +6,12 @@ module Phase8
   class ControllerBase < Phase6::ControllerBase
     def redirect_to(url)
       super
-      flash
+      flash.store_flash(@res)
     end
 
     def render_content(content, type)
       super
-
+      flash.store_flash(@res)
     end
 
     # method exposing a `Session` object
